@@ -62,30 +62,31 @@
 
 ---
 
-## 🚀 Como instalar no Termux
+## 🚀 Como instalar no Termux (passo a passo)
 
-> 📌 **Antes de começar:** troque o endereço do repositório abaixo pelo **seu** link do GitHub.
+> 📱 **É a primeira vez no Termux?** Cola os comandos na ordem. Eles instalam **TUDO** do zero — Node, git, ffmpeg e os pacotes de **figurinha, música e imagem**. Não precisa saber nada antes.
 >
-> 📱 **É a primeira vez no Termux?** Sem problema — os comandos abaixo já atualizam o Termux e instalam **tudo** do zero (git, Node, ffmpeg e os pacotes de figurinha, música e imagem). Não precisa saber nada antes.
+> 📌 Troque o link do repositório pelo **seu**, se for outro.
 
-### 1️⃣ Atualizar o Termux e baixar o bot
+### 1️⃣ Atualizar o Termux e instalar os programas (faz UMA vez só)
 
 ```bash
 pkg update -y && pkg upgrade -y
-pkg install -y git
-git clone https://github.com/DOCTOR-VALEYARD/STYLE-v1.git STYLE-v1
-cd STYLE-v1
+pkg install -y git nodejs-lts ffmpeg libwebp imagemagick python make clang binutils wget openssl
+termux-setup-storage
 ```
 
-### 2️⃣ Instalar TUDO (Node, ffmpeg e os pacotes do bot)
+> 📦 O que cada coisa é: **git** baixa o bot • **nodejs-lts** roda o bot • **ffmpeg** = música, vídeo e gif • **libwebp** = figurinha • **imagemagick** = imagem • **python / make / clang / binutils** = compilar o que precisar.
+>
+> ⚠️ Sem esses pacotes o bot até abre, mas **figurinha, música e conversão NÃO funcionam**. Por isso instale todos.
+
+### 2️⃣ Baixar o bot (cria a pasta, põe o repositório dentro) e instalar as dependências
 
 ```bash
-bash instalar.sh
+git clone https://github.com/DOCTOR-VALEYARD/STYLE-v1.git STYLE-v1
+cd STYLE-v1
+npm install
 ```
-
-> Esse comando deixa um Termux **zerado** pronto pra rodar: atualiza os pacotes e instala **Node, git, ffmpeg, libwebp (figurinha), imagemagick (imagem), python/make/clang (compilar o que precisar)** e roda o `npm install`. Faz **uma vez só**.
->
-> ⚠️ Se a pessoa pular essa etapa, o bot até abre, mas **figurinha, música e conversões não funcionam** por falta desses pacotes. Por isso rode o `instalar.sh`.
 
 ### 3️⃣ Iniciar o bot
 
@@ -95,16 +96,34 @@ bash iniciar.sh
 
 Leia o **QR Code** (ou use o código de pareamento) com o WhatsApp e pronto — a TARDIS está no ar. 🌀
 
+> 💡 **Atalho:** em vez do passo 1 + `npm install`, dá pra rodar só `bash instalar.sh` dentro da pasta — ele faz tudo isso sozinho.
+
 ---
 
 ## 🔁 Comandos do dia a dia
 
-| Situação | Comando |
-|---|---|
-| ▶️ **Iniciar o bot** | `bash iniciar.sh` |
-| 🔄 **Reabrir depois de fechar o Termux** (sem baixar de novo) | `cd STYLE-v1 && bash iniciar.sh` |
-| ⬆️ **Atualizar** quando sair uma versão nova | `cd STYLE-v1 && git pull && npm install && bash iniciar.sh` |
-| 🧰 **Reinstalar dependências** (se der erro) | `cd STYLE-v1 && npm install` |
+### 🔄 Reabrir o bot depois de fechar o Termux (NÃO baixa nada de novo)
+
+```bash
+cd STYLE-v1
+bash iniciar.sh
+```
+
+### ⬆️ Atualizar quando sair uma versão nova
+
+```bash
+cd STYLE-v1
+git pull
+npm install
+bash iniciar.sh
+```
+
+### 🧰 Reinstalar as dependências (só se der erro)
+
+```bash
+cd STYLE-v1
+npm install
+```
 
 > 💡 O `iniciar.sh` **reinicia sozinho** se o bot cair, então é só deixar rodando.
 
@@ -148,8 +167,6 @@ rpg ranking          → os maiores do multiverso
 [![Canal](https://img.shields.io/badge/WhatsApp-Canal%20Oficial-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029VbEHp6CFHWpymLOJGZ28)
 [![Instagram](https://img.shields.io/badge/Instagram-%40__dvcl__-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/__dvcl__)
 [![WhatsApp](https://img.shields.io/badge/Falar%20comigo-wa.me-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5516998761099)
-
-📧 **devanilsonfrancisco36@gmail.com**
 
 <br/>
 
