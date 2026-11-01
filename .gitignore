@@ -1,0 +1,12 @@
+node_modules/
+*.log
+bin/
+session/
+**/session/
+creds.json
+*.session
+cookies.txt
+youtube.txt
+.env
+database/usuarios.json
+database/rpg-arena.json
