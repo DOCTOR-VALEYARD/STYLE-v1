@@ -65,22 +65,27 @@
 ## 🚀 Como instalar no Termux
 
 > 📌 **Antes de começar:** troque o endereço do repositório abaixo pelo **seu** link do GitHub.
+>
+> 📱 **É a primeira vez no Termux?** Sem problema — os comandos abaixo já atualizam o Termux e instalam **tudo** do zero (git, Node, ffmpeg e os pacotes de figurinha, música e imagem). Não precisa saber nada antes.
 
-### 1️⃣ Baixar o bot (criar a pasta e copiar o repositório dentro dela)
+### 1️⃣ Atualizar o Termux e baixar o bot
 
 ```bash
+pkg update -y && pkg upgrade -y
 pkg install -y git
 git clone https://github.com/DOCTOR-VALEYARD/STYLE-v1.git STYLE-v1
 cd STYLE-v1
 ```
 
-### 2️⃣ Instalar tudo (Node, ffmpeg e as dependências)
+### 2️⃣ Instalar TUDO (Node, ffmpeg e os pacotes do bot)
 
 ```bash
 bash instalar.sh
 ```
 
-> Isso instala o Node, o git, o ffmpeg e roda o `npm install`. Faz **uma vez só**.
+> Esse comando deixa um Termux **zerado** pronto pra rodar: atualiza os pacotes e instala **Node, git, ffmpeg, libwebp (figurinha), imagemagick (imagem), python/make/clang (compilar o que precisar)** e roda o `npm install`. Faz **uma vez só**.
+>
+> ⚠️ Se a pessoa pular essa etapa, o bot até abre, mas **figurinha, música e conversões não funcionam** por falta desses pacotes. Por isso rode o `instalar.sh`.
 
 ### 3️⃣ Iniciar o bot
 
